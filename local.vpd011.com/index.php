@@ -38,7 +38,7 @@ include($_SERVER["DOCUMENT_ROOT"] . '/options/connection_database.php');
                             <h5 class="mb-0">'.$name.'</h5>
                             <h5 class="text-dark mb-0">'.$price.'&nbsp;₴</h5>
                         </div>
-
+                        
                         <div class="mb-2 text-end">
                             <button type="button" class="btn btn-success">Купить</button>
                         </div>

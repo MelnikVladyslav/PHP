@@ -13,6 +13,9 @@
                     <li class="nav-item">
                         <a class="nav-link" href="add_product.php">Додати продукт</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="Del_pr.php">Видалити продукт</a>
+                    </li>
                 </ul>
                 <ul class="navbar-nav">
                     <li class="nav-item">

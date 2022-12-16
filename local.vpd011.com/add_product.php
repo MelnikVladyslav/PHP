@@ -12,7 +12,7 @@ if($_SERVER['REQUEST_METHOD']=='POST')
     if(move_uploaded_file($image, $uploadfile)) {
         //echo'Файл успішно збережно';
         include($_SERVER["DOCUMENT_ROOT"] . '/options/connection_database.php');
-        $sql="INSERT INTO tbl_products (name, image, price, datecreate, description) VALUES (:name, :image, :price, NOW(), :description);";
+        $sql="INSERT INTO tbl_products (name, image, price, date, description) VALUES (:name, :image, :price, NOW(), :description);";
         $stmt= $conn->prepare($sql);
         $stmt->bindParam(':name', $name);
         $stmt->bindParam(':price', $price);

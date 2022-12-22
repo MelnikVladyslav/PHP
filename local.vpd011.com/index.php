@@ -20,37 +20,41 @@ include($_SERVER["DOCUMENT_ROOT"] . '/options/connection_database.php');
     <div class="container py-5">
         <div class="row">
             <?php
-            $sql="SELECT id, name, image, price FROM tbl_products";
-            foreach ($conn->query($sql) as $row) {
-                $id=$row['id'];
-                $name=$row['name'];
-                $image=$row['image'];
-                $price=$row['price'];
-                //print_r([$id, $name, $image, $price]);
-                echo '
-            <div class="col-md-6 col-lg-4 mb-4 mb-md-0">
-                <div class="card">
-                    <img src="images/'.$image.'"
-                         class="card-img-top" alt="Gaming Laptop"/>
-                    <div class="card-body">
+// set info for products in database
+$sql="
+    SELECT p.id, p.name, p.price, pi.name as image
+    FROM tbl_products as p, tbl_products_images as pi
+    WHERE p.id=pi.product_id and pi.priority=1";
+foreach ($conn->query($sql) as $row) {
+    $id=$row['id'];
+    $name=$row['name'];
+    $image=$row['image'];
+    $price=$row['price'];
+    //print_r([$id, $name, $image, $price]);
+    echo '
+<div class="col-md-6 col-lg-4 mb-4 mb-md-0">
+    <div class="card">
+        <img src="images/'.$image.'"
+             class="card-img-top" alt="Gaming Laptop"/>
+        <div class="card-body">
 
-                        <div class="d-flex justify-content-between mb-3">
-                            <h5 class="mb-0">'.$name.'</h5>
-                            <h5 class="text-dark mb-0">'.$price.'&nbsp;₴</h5>
-                        </div>
-                        
-                        <div class="mb-2 text-end">
-                            <button type="button" class="btn btn-success">Купить</button>
-                        </div>
-                    </div>
-                </div>
+            <div class="d-flex justify-content-between mb-3">
+                <h5 class="mb-0">'.$name.'</h5>
+                <h5 class="text-dark mb-0">'.$price.'&nbsp;₴</h5>
             </div>
-                ';
-            }
-            ?>
 
+            <div class="mb-2 text-end">
+                <a href="product.php?id='.$id.'" class="btn btn-success">Купить</a>
+            </div>
         </div>
     </div>
+</div>
+    ';
+}
+?>
+
+</div>
+</div>
 </section>
 
 <script src="js/bootstrap.bundle.min.js"></script>

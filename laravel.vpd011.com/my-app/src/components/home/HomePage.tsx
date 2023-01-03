@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import http from "../../http_common";
 import { IProductItem } from "./types";
+import { useSelector } from 'react-redux'
 
 const HomePage = () => {
 
@@ -14,11 +15,24 @@ const HomePage = () => {
             });
     },[]);
 
-    const content = list.map((product)=> (
-        <tr key={product.id}>
-            <td>{product.id}</td>
-            <td>{product.name}</td>
-            <td>{product.detail}</td>
+/* Add redux show */
+    const products = useSelector(state =>
+        state.products.find(products => products.id === productsId)
+      )
+
+    if (!products) {
+        return (
+          <section>
+            <h2>products not found!</h2>
+          </section>
+        )
+      }
+
+    const content = list.map((products)=> (
+        <tr key={products.id}>
+            <td>{products.id}</td>
+            <td>{products.name}</td>
+            <td>{products.detail}</td>
         </tr>
     ));
 

@@ -6,6 +6,7 @@ import HomePage from './components/home';
 import LoginPage from './components/auth/login';
 import RegisterPage from './components/auth/register/RegisterPage';
 import DefaultLayout from './components/containers/default';
+import AddProduct from './components/Add-product';
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
           <Route index element={<HomePage />} />
           <Route path="login" element={<LoginPage />} />
           <Route path="register" element={<RegisterPage />} />
+          <Route path="add" element={<AddProduct />} />
           {/* <Route path="*" element={<NoMatch />} /> */}
         </Route>
       </Routes>

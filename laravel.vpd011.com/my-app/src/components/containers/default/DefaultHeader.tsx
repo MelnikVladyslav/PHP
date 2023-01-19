@@ -1,7 +1,6 @@
 import { Link } from "react-router-dom";
-
+/*headre*/
 const DefaultHeader = () => {
-  /* повернення хедера */
   return (
     <header>
       <nav className="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
@@ -25,11 +24,6 @@ const DefaultHeader = () => {
               <li className="nav-item">
                 <Link className="nav-link active" aria-current="page" to="/">
                   Головна
-                </Link>
-              </li>
-              <li className="nav-item">
-                <Link className="nav-link active" aria-current="page" to="/add">
-                  Добавити
                 </Link>
               </li>
             </ul>

@@ -1,6 +1,5 @@
+/*Page register*/
 const RegisterPage = () => {
-
-    /* сторінка реєстрації */
     return(
         <>
             <h1>Реєстрація</h1>

@@ -11,10 +11,6 @@ return new class extends Migration
      *
      * @return void
      */
-
-    /**
-    Створення таблиці в міграції
-     */
     public function up()
     {
         Schema::create('products', function (Blueprint $table) {

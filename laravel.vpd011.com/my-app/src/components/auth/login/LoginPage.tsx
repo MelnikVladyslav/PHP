@@ -1,5 +1,5 @@
+/*Page login*/
 const LoginPage = () => {
-    /* Сторінка входу */
     return(
         <>
             <h1>Вхід</h1>

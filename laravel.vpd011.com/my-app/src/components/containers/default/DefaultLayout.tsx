@@ -1,6 +1,6 @@
 import { Outlet } from "react-router-dom";
 import DefaultHeader from "./DefaultHeader";
-
+/*Layout*/
 const DefaultLayout = () => {
     return (
         <>

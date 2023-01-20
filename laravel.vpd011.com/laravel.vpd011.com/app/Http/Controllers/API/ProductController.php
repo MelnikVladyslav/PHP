@@ -35,7 +35,7 @@ class ProductController extends Controller
     {
         $input = $request->all();
         $name = $input["name"] ?? "";
-        $products = Product::where("name", "LIKE", "%$name%")->paginate(2);
+        $products = Product::where("name", "LIKE", "%$name%")->paginate(100);
         return response()->json($products, 200,
             ["Content-Type"=>"application/json; charset=UTF-8", "Charset"=>'utf-8'],
             JSON_UNESCAPED_UNICODE);
